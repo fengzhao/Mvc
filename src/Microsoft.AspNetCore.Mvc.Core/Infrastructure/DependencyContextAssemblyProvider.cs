@@ -70,7 +70,7 @@ namespace Microsoft.AspNetCore.Mvc.Infrastructure
         /// By default it returns all assemblies that reference any of the primary MVC assemblies
         /// while ignoring MVC assemblies.
         /// </summary>
-        /// <returns>A set of <see cref="Library"/>.</returns>
+        /// <returns>A set of <see cref="RuntimeLibrary"/>.</returns>
         protected virtual IEnumerable<RuntimeLibrary> GetCandidateLibraries()
         {
             if (ReferenceAssemblies == null)

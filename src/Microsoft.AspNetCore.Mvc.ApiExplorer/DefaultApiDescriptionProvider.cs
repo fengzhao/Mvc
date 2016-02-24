@@ -593,7 +593,7 @@ namespace Microsoft.AspNetCore.Mvc.ApiExplorer
             /// Visits a node in a model, and attempts to create <see cref="ApiParameterDescription"/> for any
             /// model properties that are leaf nodes (see comments).
             /// </summary>
-            /// <param name="modelMetadata">The metadata for the model.</param>
+            /// <param name="bindingContext">The <see cref="ApiParameterDescriptionContext"/> associated with the model.</param>
             /// <param name="ambientSource">The <see cref="BindingSource"/> from the ambient context.</param>
             /// <param name="containerName">The current name prefix (to prepend to property names).</param>
             private void Visit(

@@ -632,9 +632,10 @@ namespace Microsoft.AspNetCore.Mvc.ModelBinding
         /// <summary>
         /// Clears <see cref="ModelStateDictionary"/> entries for <see cref="ModelMetadata"/>.
         /// </summary>
-        /// <param name="modelMetadata">The <see cref="ModelMetadata"/>.</param>
+        /// <param name="modelType">The <see cref="Type"/> of the model.</param>
+        /// <param name="modelstate">The <see cref="ModelStateDictionary"/> associated with the model.</param>
+        /// <param name="metadataProvider">The <see cref="IModelMetadataProvider"/>.</param>
         /// <param name="modelKey">The entry to clear. </param>
-        /// <param name="modelMetadataProvider">The <see cref="IModelMetadataProvider"/>.</param>
         public static void ClearValidationStateForModel(
             Type modelType,
             ModelStateDictionary modelstate,
@@ -663,8 +664,8 @@ namespace Microsoft.AspNetCore.Mvc.ModelBinding
         /// Clears <see cref="ModelStateDictionary"/> entries for <see cref="ModelMetadata"/>.
         /// </summary>
         /// <param name="modelMetadata">The <see cref="ModelMetadata"/>.</param>
+        /// <param name="modelstate">The <see cref="ModelStateDictionary"/> associated with the model.</param>
         /// <param name="modelKey">The entry to clear. </param>
-        /// <param name="modelMetadataProvider">The <see cref="IModelMetadataProvider"/>.</param>
         public static void ClearValidationStateForModel(
             ModelMetadata modelMetadata,
             ModelStateDictionary modelstate,
@@ -849,10 +850,10 @@ namespace Microsoft.AspNetCore.Mvc.ModelBinding
         }
 
         /// <summary>
-        /// Converts the provided <paramref name="value"/> to a value of <see cref="Type"/> <param name="type"/>
+        /// Converts the provided <paramref name="value"/> to a value of <see cref="Type"/> <paramref name="type"/>
         /// using the <see cref="CultureInfo.InvariantCulture"/>.
         /// </summary>
-        /// <param name="value">The value to convert."/></param>
+        /// <param name="value">The value to convert.</param>
         /// <param name="type">The <see cref="Type"/> for conversion.</param>
         /// <returns>
         /// The converted value or <c>null</c> if the value could not be converted.
